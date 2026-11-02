@@ -1,0 +1,326 @@
+{
+  "artifacts": {},
+  "breadboard": {
+    "placements": {
+      "cmp_a": {
+        "rotation": 0,
+        "x": 620,
+        "y": 20
+      },
+      "cmp_and": {
+        "rotation": 0,
+        "x": 620,
+        "y": 140
+      },
+      "cmp_b": {
+        "rotation": 0,
+        "x": 780,
+        "y": 20
+      },
+      "cmp_c": {
+        "rotation": 0,
+        "x": 940,
+        "y": 140
+      },
+      "cmp_s": {
+        "rotation": 0,
+        "x": 780,
+        "y": 140
+      },
+      "cmp_xor": {
+        "rotation": 0,
+        "x": 940,
+        "y": 20
+      }
+    },
+    "unit": "css-px",
+    "wires": {
+      "conn_a_and": {
+        "color": "blue",
+        "points": []
+      },
+      "conn_a_xor": {
+        "color": "blue",
+        "points": []
+      },
+      "conn_and_c": {
+        "color": "orange",
+        "points": []
+      },
+      "conn_b_and": {
+        "color": "green",
+        "points": []
+      },
+      "conn_b_xor": {
+        "color": "green",
+        "points": []
+      },
+      "conn_xor_s": {
+        "color": "orange",
+        "points": []
+      }
+    }
+  },
+  "components": [
+    {
+      "definitionId": "logic-switch",
+      "definitionVersion": 1,
+      "id": "cmp_a",
+      "params": {
+        "state": "0"
+      },
+      "refDes": "A"
+    },
+    {
+      "definitionId": "logic-switch",
+      "definitionVersion": 1,
+      "id": "cmp_b",
+      "params": {
+        "state": "0"
+      },
+      "refDes": "B"
+    },
+    {
+      "definitionId": "gate-xor",
+      "definitionVersion": 1,
+      "id": "cmp_xor",
+      "params": {},
+      "refDes": "U1"
+    },
+    {
+      "definitionId": "gate-and",
+      "definitionVersion": 1,
+      "id": "cmp_and",
+      "params": {},
+      "refDes": "U2"
+    },
+    {
+      "definitionId": "logic-led",
+      "definitionVersion": 1,
+      "id": "cmp_s",
+      "params": {},
+      "refDes": "SOMA"
+    },
+    {
+      "definitionId": "logic-led",
+      "definitionVersion": 1,
+      "id": "cmp_c",
+      "params": {},
+      "refDes": "VAI1"
+    }
+  ],
+  "connections": [
+    {
+      "a": {
+        "componentId": "cmp_a",
+        "pinId": "OUT"
+      },
+      "b": {
+        "componentId": "cmp_xor",
+        "pinId": "A"
+      },
+      "id": "conn_a_xor",
+      "kind": "wire"
+    },
+    {
+      "a": {
+        "componentId": "cmp_b",
+        "pinId": "OUT"
+      },
+      "b": {
+        "componentId": "cmp_xor",
+        "pinId": "B"
+      },
+      "id": "conn_b_xor",
+      "kind": "wire"
+    },
+    {
+      "a": {
+        "componentId": "cmp_a",
+        "pinId": "OUT"
+      },
+      "b": {
+        "componentId": "cmp_and",
+        "pinId": "A"
+      },
+      "id": "conn_a_and",
+      "kind": "wire"
+    },
+    {
+      "a": {
+        "componentId": "cmp_b",
+        "pinId": "OUT"
+      },
+      "b": {
+        "componentId": "cmp_and",
+        "pinId": "B"
+      },
+      "id": "conn_b_and",
+      "kind": "wire"
+    },
+    {
+      "a": {
+        "componentId": "cmp_xor",
+        "pinId": "Y"
+      },
+      "b": {
+        "componentId": "cmp_s",
+        "pinId": "IN"
+      },
+      "id": "conn_xor_s",
+      "kind": "wire"
+    },
+    {
+      "a": {
+        "componentId": "cmp_and",
+        "pinId": "Y"
+      },
+      "b": {
+        "componentId": "cmp_c",
+        "pinId": "IN"
+      },
+      "id": "conn_and_c",
+      "kind": "wire"
+    }
+  ],
+  "createdAt": "2026-10-19T12:00:00.000Z",
+  "customParts": [],
+  "enclosure": null,
+  "firmware": {
+    "core": "arduino:avr@1.8.8",
+    "files": [
+      {
+        "path": "sketch.ino"
+      }
+    ],
+    "fqbn": "arduino:avr:uno",
+    "libraries": [],
+    "mainFile": "sketch.ino"
+  },
+  "id": "prj_2hm20gmox5dp",
+  "pcb": {
+    "board": {
+      "height": 40,
+      "width": 50
+    },
+    "layers": 2,
+    "mountingHoles": [],
+    "origin": "board-center",
+    "outline": "custom",
+    "placements": {},
+    "routing": "auto",
+    "traces": [],
+    "unit": "mm",
+    "vias": []
+  },
+  "product": {
+    "analysis": {
+      "battery": {
+        "kind": "usb",
+        "mAh": 2000
+      },
+      "loadCases": [],
+      "resolutionTargetUm": 20,
+      "supports": [],
+      "thermal": {
+        "ambientC": 25,
+        "convection": 10
+      },
+      "tolerances": {}
+    },
+    "bodies": [],
+    "camera": null,
+    "detectors": [],
+    "emitters": [],
+    "focus": null,
+    "models": [],
+    "pcb": {
+      "transform": {
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ]
+      },
+      "visible": true
+    },
+    "sample": null,
+    "unit": "mm",
+    "vision": {
+      "autofocus": {
+        "command": "F{angle}\n",
+        "max": 180,
+        "min": 0,
+        "step": 15
+      },
+      "focusMetric": "laplacian",
+      "measure": {
+        "invert": false,
+        "maxAreaUm2": 20000,
+        "minAreaUm2": 4,
+        "split": true,
+        "threshold": "otsu"
+      },
+      "model": null
+    }
+  },
+  "revision": 19,
+  "schemaVersion": 7,
+  "schematic": {
+    "placements": {
+      "cmp_a": {
+        "rotation": 0,
+        "x": 6,
+        "y": 8
+      },
+      "cmp_and": {
+        "rotation": 0,
+        "x": 20,
+        "y": 18
+      },
+      "cmp_b": {
+        "rotation": 0,
+        "x": 6,
+        "y": 18
+      },
+      "cmp_c": {
+        "rotation": 0,
+        "x": 32,
+        "y": 18
+      },
+      "cmp_s": {
+        "rotation": 0,
+        "x": 32,
+        "y": 8
+      },
+      "cmp_xor": {
+        "rotation": 0,
+        "x": 20,
+        "y": 8
+      }
+    },
+    "unit": "grid",
+    "wires": {}
+  },
+  "simulation": {
+    "circuit": {
+      "scope": {
+        "channels": [],
+        "timePerDiv": 0.001,
+        "voltsPerDiv": 1
+      },
+      "speed": 1
+    },
+    "clockHz": 16000000,
+    "engine": "avr8js",
+    "engineVersion": "0.21.1",
+    "speed": 1
+  },
+  "title": "Meio somador",
+  "updatedAt": "2026-10-19T12:00:00.000Z"
+}
